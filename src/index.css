@@ -2,12 +2,11 @@
 
 @layer base {
   body {
-    background-color: #111827;
+    background-color: #0f0f23;
     color: #ffffff;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -27,7 +26,6 @@
   }
 }
 
-/* Custom animations */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
@@ -39,6 +37,11 @@
   50% { transform: translateY(-10px); }
 }
 
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .animate-shake {
   animation: shake 0.5s ease-in-out;
 }
@@ -47,7 +50,10 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Number input styling */
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
